@@ -29,6 +29,16 @@ export default function TabLayout() {
       borderTopRightRadius: 50,
       borderBottomLeftRadius: 50,
       borderBottomRightRadius: 50,
+      marginHorizontal: 20,
+      height: 70,
+      position: 'absolute',
+      bottom: 17,
+      backgroundColor: 'white',
+      shadowColor: '#1a1a1a',
+      shadowOffset: { width: 0, height: 2},
+      shadowOpacity: 0.1,
+      shadowRadius: 4,
+      elevation: 5
     }
   }}
   >
@@ -37,6 +47,30 @@ export default function TabLayout() {
       options={{
         title: 'Home',
         tabBarIcon: ({focused}) => <TabBarIcon title="Home" icon={images.home} focused={focused}/>
+      }}
+    />
+
+    <Tabs.Screen
+      name='search'
+      options={{
+        title: 'Search',
+        tabBarIcon: ({focused}) => <TabBarIcon title="Search" icon={images.search} focused={focused}/>
+      }}
+    />
+
+    <Tabs.Screen
+      name='cart'
+      options={{
+        title: 'Cart',
+        tabBarIcon: ({focused}) => <TabBarIcon title="Cart" icon={images.bag} focused={focused}/>
+      }}
+    />
+
+    <Tabs.Screen
+      name='profile'
+      options={{
+        title: 'Profile',
+        tabBarIcon: ({focused}) => <TabBarIcon title="Profile" icon={images.person} focused={focused}/>
       }}
     />
   </Tabs>
