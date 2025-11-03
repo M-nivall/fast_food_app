@@ -1,8 +1,9 @@
+import useAuthStore from '@/store/auth.store';
+import * as Sentry from '@sentry/react-native';
 import { useFonts } from 'expo-font';
 import { SplashScreen, Stack } from "expo-router";
 import { useEffect } from 'react';
 import "./globals.css";
-import * as Sentry from '@sentry/react-native';
 
 Sentry.init({
   dsn: 'https://3b1b8a90cf2bc609366dc4d519382e98@o4510263083925505.ingest.us.sentry.io/4510263130193920',
@@ -24,6 +25,8 @@ Sentry.init({
 });
 
 export default Sentry.wrap(function RootLayout() {
+
+  const {isLoading, fetchAuthenticatedUser} = useAuthStore();
   const [fontsLoaded, error] = useFonts({
     "QuickSand-Bold": require('../assets/fonts/Quicksand-Bold.ttf'),
     "QuickSand-Medium": require('../assets/fonts/Quicksand-Medium.ttf'),
@@ -37,7 +40,11 @@ export default Sentry.wrap(function RootLayout() {
     if (fontsLoaded) SplashScreen.hideAsync();
   }, [fontsLoaded, error]);
 
-  if (!fontsLoaded) return null;
+  useEffect(() => {
+    fetchAuthenticatedUser();
+  }, []);
+
+  if (!fontsLoaded || isLoading) return null;
 
   return (
     <Stack

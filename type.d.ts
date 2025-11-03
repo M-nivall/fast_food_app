@@ -19,7 +19,7 @@ export interface Category extends Models.Document {
 export interface User extends Models.Document {
     name: string;
     email: string;
-    avatar: string;
+    avator: string;
 }
 
 export interface CartCustomization {
