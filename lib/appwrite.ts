@@ -93,3 +93,14 @@ export const getMenu = async ({category, query}: GetMenuParams) => {
         throw new Error(e as string);
     }
 }
+
+export const getCategories = async () => {
+    try {
+        const categories = await databases.listDocuments(
+            appwriteConfig.databaseId,
+            appwriteConfig.categoriesCollectionId,
+        )
+    } catch(e){
+        throw new Error(e as string);
+    }
+}
