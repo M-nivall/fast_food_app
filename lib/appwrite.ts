@@ -1,4 +1,4 @@
-import { CreateUserParams, SignInParams } from "@/type";
+import { CreateUserParams, GetMenuParams, SignInParams } from "@/type";
 import { Account, Avatars, Client, Databases, ID, Query, Storage } from "react-native-appwrite";
 
 export const appwriteConfig = {
@@ -75,3 +75,5 @@ export const getCurrentUser = async() => {
         throw new Error(e as string);
     }
 }
+
+export const getMenu = async ({category, query}: GetMenuParams) => {}
