@@ -1,6 +1,7 @@
 import CartButton from '@/components/CartButton'
 import { getCategories, getMenu } from '@/lib/appwrite'
 import useAppwrite from '@/lib/useAppwrite'
+import cn from 'clsx'
 import { useLocalSearchParams } from 'expo-router'
 import React, { useEffect } from 'react'
 import { FlatList, Text, View } from 'react-native'
@@ -22,8 +23,9 @@ const search = () => {
       <FlatList
         data={data}
         renderItem={({item, index}) => {
+          const isFirstRightColItem = index % 2 === 0;
           return(
-            <View className="flex-1 max-w-[48%]">
+            <View className={cn("flex-1 max-w-[48%]", !isFirstRightColItem ? 'mt-10' : 'mt-0')}>
               <Text>Menu Card</Text>
             </View>
           )
@@ -47,6 +49,7 @@ const search = () => {
             <Text>Filter</Text>
           </View>
         )}
+        ListEmptyComponent={() => !loading && <Text>No results</Text>}
       />
     </SafeAreaView>
   )
