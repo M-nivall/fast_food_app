@@ -2,7 +2,7 @@ import { getCategories, getMenu } from '@/lib/appwrite'
 import useAppwrite from '@/lib/useAppwrite'
 import { useLocalSearchParams } from 'expo-router'
 import React, { useEffect } from 'react'
-import { Text } from 'react-native'
+import { FlatList, Text, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 
 const search = () => {
@@ -17,8 +17,17 @@ const search = () => {
   },[category,query]);
 
   return (
-    <SafeAreaView>
-      <Text>Search</Text>
+    <SafeAreaView className="bg-white h-full">
+      <FlatList
+        data={data}
+        renderItem={({item, index}) => {
+          return(
+            <View className="flex-1 max-w-[48%]">
+              <Text>Menu Card</Text>
+            </View>
+          )
+        }}
+      />
     </SafeAreaView>
   )
 }
