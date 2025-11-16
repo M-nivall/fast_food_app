@@ -51,7 +51,7 @@ const search = () => {
             </View>
 
             <SearchBar/>
-            
+
             <Filter/>
           </View>
         )}

@@ -1,7 +1,7 @@
 import { Category } from '@/type';
 import { useLocalSearchParams } from 'expo-router';
 import React, { useState } from 'react';
-import { Text, View } from 'react-native';
+import { FlatList, Text, TouchableOpacity } from 'react-native';
 
 const Filter = ({categories}: {categories: Category[]}) => {
 
@@ -13,9 +13,15 @@ const Filter = ({categories}: {categories: Category[]}) => {
         ? [{$id: 'all', name: 'All'}, ...categories]
         : [{$id: 'all', name: 'All'}]
   return (
-    <View>
-      <Text>Filter</Text>
-    </View>
+    <FlatList 
+        data={filterData}
+        keyExtractor={(item) => item.$id}
+        renderItem={({item}) =>(
+            <TouchableOpacity>
+                <Text>{item.name}</Text>
+            </TouchableOpacity>
+        )}
+    />
   )
 }
 
