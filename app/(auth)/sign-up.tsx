@@ -7,6 +7,7 @@ import { Alert, Text, View } from 'react-native';
 
 const SignUp = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  
   const [form, setForm] = useState({name: '', email: '', password: ''});
 
   const submit = async() => {
@@ -17,7 +18,7 @@ const SignUp = () => {
       try {
         await createUser({ email, password, name })
         
-        //Alert.alert('Success', 'User signed up successfully');
+       //Alert.alert('Success', 'User signed up successfully');
         router.replace('/')
       } catch(error: any) {
         Alert.alert('Error', error.message)
