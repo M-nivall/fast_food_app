@@ -1,14 +1,42 @@
 import { appwriteConfig } from '@/lib/appwrite'
 import { MenuItem } from '@/type'
 import React from 'react'
-import { Image, TouchableOpacity } from 'react-native'
+import { Image, Platform, Text, TouchableOpacity } from 'react-native'
 
-const MenuCard = ({ item: { image_url, name, price } }:{item: MenuItem}) => {
+interface MenuCardProps {
+  item: MenuItem
+}
 
+const MenuCard = ({ item: { image_url, name, price } }: MenuCardProps) => {
   const imageUrl = `${image_url}?project=${appwriteConfig.projectId}`
+
   return (
-    <TouchableOpacity>
-      <Image source={{uri: imageUrl}} className="size-32 absolute -top-10" resizeMode='contain' />
+    <TouchableOpacity
+      className="menu-card pt-4" // small top padding
+      style={Platform.OS === 'android' ? { elevation: 10, shadowColor: '#878787' } : {}}
+    >
+      <Image
+        source={{ uri: imageUrl }}
+        className="size-32" // image inside normal flow
+        resizeMode="contain"
+      />
+
+      <Text
+        className="text-center base-bold text-dark-100 mb-2"
+        numberOfLines={2}
+      >
+        {name}
+      </Text>
+
+      <Text className="body-regular text-gray-200 mb-4">
+        From ${price}
+      </Text>
+
+      <TouchableOpacity>
+        <Text className="paragraph-bold text-primary">
+          Add to Cart
+        </Text>
+      </TouchableOpacity>
     </TouchableOpacity>
   )
 }
