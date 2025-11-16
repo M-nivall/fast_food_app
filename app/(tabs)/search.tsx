@@ -51,7 +51,7 @@ const search = () => {
             </View>
 
             <SearchBar/>
-            <Filter categories={categories!}/>
+            <Filter categories={categories}/>
 
           </View>
         )}
