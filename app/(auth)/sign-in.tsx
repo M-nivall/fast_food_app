@@ -30,6 +30,7 @@ const SignIn = () => {
   }
   return (
     <View className="gap-10 bg-white rounded-lg p-5 mt-5">
+
       <CustomInput
           placeholder="Enter your email"
           value={form.email}
@@ -37,6 +38,7 @@ const SignIn = () => {
           label="Email"
           keyboardType="email-address"
         />
+
         <CustomInput
           placeholder="Enter your password"
           value={form.password}
@@ -44,6 +46,7 @@ const SignIn = () => {
           label="Password"
           secureTextEntry={true}
         />
+
         <CustomButton
           title="Sign In"
           isLoading={isSubmitting}
@@ -58,6 +61,7 @@ const SignIn = () => {
            Sign Up
         </Link>
         </View>
+        
     </View>
   )
 }
