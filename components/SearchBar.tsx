@@ -1,6 +1,6 @@
 import { useLocalSearchParams } from 'expo-router';
 import React, { useState } from 'react';
-import { TextInput, View } from 'react-native';
+import { TextInput, TouchableOpacity, View } from 'react-native';
 
 const SearchBar = () => {
   const params = useLocalSearchParams<{ query?: string}>();
@@ -16,6 +16,10 @@ const SearchBar = () => {
         onChangeText={handleSearch}
         placeholderTextColor="#A0A0A0"
        />
+
+       <TouchableOpacity className="pr-5" onPress={() => console.log('Search pressed')}>
+        //
+       </TouchableOpacity>
     </View>
   )
 }
