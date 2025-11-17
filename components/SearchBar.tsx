@@ -29,7 +29,7 @@ const SearchBar = () => {
         returnKeyType="search"
        />
 
-       <TouchableOpacity className="pr-5" onPress={() => console.log('Search pressed')}>
+       <TouchableOpacity className="pr-5" onPress={() => router.setParams({query})}>
         <Image 
           source={images.search}
           className="size-6"
