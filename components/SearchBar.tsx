@@ -3,7 +3,7 @@ import { Text, View } from 'react-native'
 
 const SearchBar = () => {
   return (
-    <View>
+    <View className="searchbar">
       <Text>SearchBar</Text>
     </View>
   )
