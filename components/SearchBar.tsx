@@ -1,10 +1,13 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { TextInput, View } from 'react-native'
 
 const SearchBar = () => {
   return (
     <View className="searchbar">
-      <Text>SearchBar</Text>
+      <TextInput
+        className="flex-1 p-5"
+        placeholder="Search for pizzas, burgers..."
+       />
     </View>
   )
 }
