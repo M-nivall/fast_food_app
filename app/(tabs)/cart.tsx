@@ -38,6 +38,22 @@ const cart = () => {
               <Text className="h3-bold text-dark-100 mb-5">
                 Payment Summary 
               </Text>
+
+              <PaymentInfoStripe 
+                label={`Total Items(${totalItems})`}
+                value={`$${totalPrice.toFixed(2)}`}
+              />
+
+              <PaymentInfoStripe 
+                label={`Total Items(${totalItems})`}
+                value={`$${totalPrice.toFixed(2)}`}
+              />
+
+              <PaymentInfoStripe 
+                label={`Total Items(${totalItems})`}
+                value={`$${totalPrice.toFixed(2)}`}
+              />
+      
             </View>
           </View>
         )}
