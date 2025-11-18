@@ -1,3 +1,4 @@
+import CustomButton from '@/components/CustomButton'
 import CustomHeader from '@/components/CustomHeader'
 import { useCartStore } from '@/store/cart.store'
 import { PaymentInfoStripeProps } from '@/type'
@@ -45,16 +46,28 @@ const cart = () => {
               />
 
               <PaymentInfoStripe 
-                label={`Total Items(${totalItems})`}
-                value={`$${totalPrice.toFixed(2)}`}
+                label={`Delivery Fee`}
+                value={`$5.00`}
               />
 
               <PaymentInfoStripe 
-                label={`Total Items(${totalItems})`}
-                value={`$${totalPrice.toFixed(2)}`}
+                label={`Discount`}
+                value={`- $o.50`}
+                valueStyle="!text-success"
+              />
+
+              <View className="border-t border-gray-300 my-2"></View>
+
+              
+              <PaymentInfoStripe 
+                label={`Total`}
+                value={`$${(totalPrice + 5 - 0.5).toFixed(2)}`}
+                labelStyle="text-bold !text-dark-100"
+                valueStyle="text-bold !text-dark-100 !text-right"
               />
       
             </View>
+            <CustomButton title="Order Now" />
           </View>
         )}
        />
