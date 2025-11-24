@@ -9,6 +9,7 @@ const Filter = ({categories}: {categories: Category[]}) => {
     const searchParams = useLocalSearchParams();
     const[active, setActive] = useState(searchParams.category || '');
     const handlePress = (id: string) => {
+        
         setActive(id);
 
         if(id === 'all') router.setParams({category:undefined});
