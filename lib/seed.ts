@@ -129,7 +129,7 @@ async function seed(): Promise<void> {
 
     console.log("✅ Seeding complete!");
   } catch (error) {
-    console.error("❌ Failed to seed database:", error);
+    console.error(" Failed to seed database:", error);
   }
 }
 
