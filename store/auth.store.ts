@@ -38,5 +38,4 @@ const useAuthStore = create<authState>((set) => ({
         }
     }
 }))
-
 export default useAuthStore;
