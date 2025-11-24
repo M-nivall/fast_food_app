@@ -9,6 +9,7 @@ interface MenuCardProps {
 }
 
 const MenuCard = ({ item: { $id, image_url, name, price } }: MenuCardProps) => {
+  
   const imageUrl = `${image_url}?project=${appwriteConfig.projectId}`;
 
   const {addItem} = useCartStore();
