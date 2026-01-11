@@ -15,6 +15,7 @@ const MenuCard = ({ item: { $id, image_url, name, price } }: MenuCardProps) => {
   const {addItem} = useCartStore();
 
   return (
+    
     <TouchableOpacity
       className="menu-card pt-4" // small top padding
       style={Platform.OS === 'android' ? { elevation: 10, shadowColor: '#878787' } : {}}
