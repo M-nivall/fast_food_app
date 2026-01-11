@@ -136,4 +136,5 @@
     .small-bold {
         @apply text-xs font-quicksand-bold;
     }
+    
 }
