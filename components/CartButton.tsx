@@ -19,5 +19,4 @@ const CartButton = () => {
     </TouchableOpacity>
   )
 }
-
 export default CartButton
