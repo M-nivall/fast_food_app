@@ -31,4 +31,5 @@ const CustomInput = ({
     </View>
   )
 }
+
 export default CustomInput
