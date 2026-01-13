@@ -101,7 +101,6 @@ interface SignInParams {
     password: string;
 }
 
-
 interface GetMenuParams {
     category: string;
     query: string;
