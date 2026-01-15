@@ -68,4 +68,5 @@ const SignUp = () => {
     </View>
   )
 }
+
 export default SignUp;
