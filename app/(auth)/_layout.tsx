@@ -20,5 +20,4 @@ export default function AuthLayout() {
       </ScrollView>
     </KeyboardAvoidingView>
   )
-  
 }
