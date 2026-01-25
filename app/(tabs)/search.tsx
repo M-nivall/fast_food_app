@@ -74,5 +74,4 @@ const search = () => {
     </SafeAreaView>
   );
 };
-
 export default search;
