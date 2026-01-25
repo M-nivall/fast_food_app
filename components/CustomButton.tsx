@@ -27,5 +27,4 @@ const CustomButton = ({
     </TouchableOpacity>
   );
 };
-
 export default CustomButton;
