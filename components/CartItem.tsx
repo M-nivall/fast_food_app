@@ -62,5 +62,4 @@ const CartItem = ({ item }: { item: CartItemType }) => {
     </View>
   );
 };
-
 export default CartItem;
