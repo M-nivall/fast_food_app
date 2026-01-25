@@ -23,5 +23,4 @@ const CustomHeader = ({ title }: CustomHeaderProps) => {
     </View>
   );
 };
-
 export default CustomHeader;
