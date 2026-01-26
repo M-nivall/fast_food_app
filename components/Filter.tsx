@@ -51,4 +51,5 @@ const Filter = ({ categories }: { categories: Category[] }) => {
     />
   );
 };
+
 export default Filter;
