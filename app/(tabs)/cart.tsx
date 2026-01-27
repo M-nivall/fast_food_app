@@ -76,5 +76,4 @@ const cart = () => {
     </SafeAreaView>
   );
 };
-
 export default cart;
